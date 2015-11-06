@@ -16,10 +16,14 @@ using namespace std;
 
 // Version destinée à accueillir les données du GIEC 
 
-SimulationValues create_etat_2001() 
+// insérer ici la fonction qui interpole les valeurs GIEC
+// pour le monde et le scénario choisi 
+// ou chaque région et le scénario choisi
+
+SimulationValues create_etat_2000() 
 {
-    SimulationValues s("le monde en 2001",ID_MIN,ID_MAX,TEMPS_ELEM);
-    s.annee_debut=1901.;
+    SimulationValues s("le monde en 2000",ID_MIN,ID_MAX,TEMPS_ELEM);
+    s.annee_debut=1900.;
     s.fixed_eau=0;	
     s.fixed_concentration=0;		
     s.debranche_biologie=0;	
@@ -47,10 +51,10 @@ SimulationValues create_etat_2001()
 	s.niveau_mer_data[t]=0.;
 	s.niveau_calottes_data[t]=niveau_calottes_actuel;
 	s.concentrations_coo_data[t]=concentration_coo_actuel;
-    //emith anthro_value est un tableau, ICI on peut passer la place le tableau GIEC
+    //emith anthro_value est un tableau, ICI on peut passer à la place le tableau GIEC
     s.emit_anthro_coo_value[t]=emit_anthro_coo_act;
-    // Faut il prendre antrho t-1?
-	s.emissions_coo_data[t]=emit_anthro_coo_act[t]*(1-puit_bio_act-puit_ocean_act);
+    // Faut il prendre anthro t-1?
+	s.emissions_coo_data[t]=emit_anthro_coo_act*(1-puit_bio_act-puit_ocean_act);
 
 	s.albedo_data[t]=albedo_actuel*100;
     }
