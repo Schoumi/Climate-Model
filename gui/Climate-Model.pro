@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     savedialog.cpp \
     loaddialog.cpp \
     resultview.cpp \
-    newsimulation.cpp
+    newsimulation.cpp \
+    paramview.cpp
 
 HEADERS  += mainwindow.h \
     startview.h \
@@ -30,4 +31,8 @@ HEADERS  += mainwindow.h \
     savedialog.h \
     loaddialog.h \
     resultview.h \
-    newsimulation.h
+    newsimulation.h \
+    paramview.h
+
+FORMS += \
+    paramview.ui

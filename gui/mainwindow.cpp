@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     headerLayout->addStretch();
     headerLayout->addWidget(newSim);
     headerLayout->addWidget(addSim);
-    headerLayout->addWidget(save);
+    //headerLayout->addWidget(save);
     headerLayout->addWidget(load);
     headerLayout->addWidget(quit);
 
@@ -84,7 +84,7 @@ void MainWindow::save()
 
 void MainWindow::quit()
 {
-
+    close();
 }
 
 MainWindow::~MainWindow()

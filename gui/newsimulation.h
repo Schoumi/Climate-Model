@@ -1,18 +1,37 @@
 #ifndef NEWSIMULATION_H
 #define NEWSIMULATION_H
 
-#include <QWidget>
+#include <QDialog>
+#include <QRadioButton>
+#include <QButtonGroup>
+#include <QPushButton>
+#include <QComboBox>
+#include <QLineEdit>
+#include <QLabel>
+#include <QSpinBox>
 
-class NewSimulation : public QWidget
+class NewSimulation : public QDialog
 {
     Q_OBJECT
 public:
-    explicit NewSimulation(QWidget *parent = 0);
+    NewSimulation(QWidget *parent = 0);
 
-signals:
+private slots:
+    void startSimulation();
+    void openFile();
+    void buttonClicked();
 
-public slots:
-
+private:
+    QLineEdit simulationName;
+    QButtonGroup group;
+    QRadioButton bt1750;
+    QRadioButton bt21century;
+    QRadioButton btOldSimulation;
+    QRadioButton btSimulationInProgress;
+    QSpinBox duration;
+    QComboBox *previousSimu;
+    QString filename;
+    QLabel *file;
 };
 
 #endif // NEWSIMULATION_H

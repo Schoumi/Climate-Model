@@ -20,6 +20,8 @@ public:
     void setPosition(int position);
     void showCurve(int id);
     void hideCurve(int id);
+    QColor getColor(int id);
+    void clean();
 
 public slots:
     void changeGraphType(int type);

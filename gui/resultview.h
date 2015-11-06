@@ -4,6 +4,7 @@
 #include <QWidget>
 
 #include "graphview.h"
+#include <QGridLayout>
 
 class ResultView : public QWidget
 {
@@ -11,12 +12,18 @@ class ResultView : public QWidget
 public:
     explicit ResultView(QWidget *parent = 0);
     void startSimulation();
+    void addSimulation();
+
+private slots:
+    void hideSimu(bool show);
 
 private:
     GraphView view;
     GraphView view1;
     GraphView view2;
     GraphView view3;
+
+    QGridLayout legendLayout;
 
 };
 
